@@ -1,10 +1,11 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
+from fixture.project import ProjectHelper
 
 
 class Application:
 
-    def __init__(self, browser, base_url):
+    def __init__(self, browser="chrome", base_url="http://localhost/mantisbt-2.25.4/login_page.php"):
         if browser == "chrome":
             self.wd = webdriver.Chrome()
         elif browser == "firefox":
