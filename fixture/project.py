@@ -39,8 +39,7 @@ class ProjectHelper:
         wd.find_element(by=By.NAME, value="name").click()
         wd.find_element(by=By.NAME, value="name").clear()
         wd.find_element(by=By.NAME, value=f"name").send_keys(project.name)
-        xxxx = wd.find_element(by=By.CSS_SELECTOR, value="input[type='submit']")
-        xxxx.click()
+        wd.find_element(by=By.CSS_SELECTOR, value="input[type='submit']").click()
 
     def create_name(self, old_projects):
         symbols = string.ascii_letters
@@ -56,6 +55,18 @@ class ProjectHelper:
                 zzz = True
         return zzz
 
+    def delete_by_id(self, id):
+        wd = self.app.wd
+        self.open_manage_page()
+        self.open_project_page_by_id(id)
+        # нажать на кнопуку "удалить"
+        wd.find_element(by=By.CSS_SELECTOR, value="input[value='Удалить проект']").click()
+        wd.find_element(by=By.CSS_SELECTOR, value="input[value='Удалить проект']").click()
 
+
+    def open_project_page_by_id(self, id):
+        wd = self.app.wd
+        # нажимаем кнопку edit для заданной по id контакта
+        wd.find_element(by=By.CSS_SELECTOR, value="a[href='manage_proj_edit_page.php?project_id=%s']" % id).click()
 
 
