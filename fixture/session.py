@@ -24,19 +24,6 @@ class SessionHelper:
     def logout(self):
         wd = self.app.wd
         wd.get('http://localhost/mantisbt-2.25.4/logout_page.php')
-        # выход из учетной записи
-        # xxx = wd.find_element(by=By.CSS_SELECTOR, value="a[href='/mantisbt-2.25.4/logout_page.php']")
-        # yyy = xxx.GetAttribute("value")
-        # yyy.click()
-
-    # def ensure_logout(self):
-    #     wd = self.app.wd
-    #     # if self.is_logged_in():
-    #     self.logout()
-    #
-    # def is_logged_in(self):
-    #     wd = self.app.wd
-    #     return len(wd.find_elements(by=By.CSS_SELECTOR, value="a[href='/mantisbt-2.25.4/logout_page.php']")) > 0
 
     def is_logged_in_as(self, username):
         wd = self.app.wd
