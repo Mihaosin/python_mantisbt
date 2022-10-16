@@ -35,11 +35,20 @@ class SessionHelper:
         v1 = v[1].get_attribute("text")
         return v1
 
-    # def ensure_login(self, username, password):
-    #
-    #     if self.is_logged_in():
-    #         if self.is_logged_in_as(username):
-    #             return
-    #         else:
-    #             self.logout()
-    #     self.login(username,password)
+    def ensure_login(self, username, password):
+        wd = self.app.wd
+        if self.is_logged_in():
+            if self.is_logged_in_as(username):
+                return
+            else:
+                self.logout()
+        self.login(username, password)
+
+    def is_logged_in(self):
+        wd = self.app.wd
+        return len(wd.find_elements(by=By.CSS_SELECTOR, value="a[href='/mantisbt-2.25.4/logout_page.php']")) > 0
+
+    def ensure_logout(self):
+        wd = self.app.wd
+        if self.is_logged_in():
+            self.logout()

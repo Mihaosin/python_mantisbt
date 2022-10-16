@@ -3,7 +3,7 @@ from model.project import Project
 
 def test_add_project(app):
     # логин
-    app.session.login("administrator", "root")
+    app.session.login(username, password)
     # получить список old_projects
     # old_projects = app.project.get_project_list()
     old_projects = app.soap.get_project_list()

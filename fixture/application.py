@@ -6,7 +6,7 @@ from fixture.soap import SoapHelper
 
 class Application:
 
-    def __init__(self, browser="chrome", base_url="http://localhost/mantisbt-2.25.4/login_page.php"):
+    def __init__(self, browser, config):
         if browser == "chrome":
             self.wd = webdriver.Chrome()
         elif browser == "firefox":
@@ -20,7 +20,10 @@ class Application:
         self.session = SessionHelper(self)
         self.project = ProjectHelper(self)
         self.soap = SoapHelper(self)
-        self.base_url = base_url
+        self.config = config
+        self.base_url = config['web']['baseUrl']
+        self.username = config['web']['username']
+        self.password = config['web']['password']
 
     def is_valid(self):
         try:
