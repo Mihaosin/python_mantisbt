@@ -1,8 +1,9 @@
 {
   "web": {
-    "baseUrl": "http://localhost/mantisbt-2.25.4/",
+    "baseUrl":  "http://localhost/mantisbt-2.25.4/",
     "username": "administrator",
     "password": "root",
-    "logout": "http://localhost/mantisbt-2.25.4/logout_page.php"
+    "logout":   "http://localhost/mantisbt-2.25.4/logout_page.php",
+    "manage":   "http://localhost/mantisbt-2.25.4/manage_proj_page.php"
   }
 }

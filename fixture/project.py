@@ -11,8 +11,8 @@ class ProjectHelper:
 
     def open_manage_page(self):
         wd = self.app.wd
-        if not wd.current_url.endswith("localhost/mantisbt-2.25.4/manage_proj_page.php"):
-            wd.get('http://localhost/mantisbt-2.25.4/manage_proj_page.php')
+        if not wd.current_url.endswith(self.app.manage):
+            wd.get(self.app.manage)
 
     project_cache = None
 
