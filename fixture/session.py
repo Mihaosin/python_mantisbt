@@ -23,7 +23,7 @@ class SessionHelper:
 
     def logout(self):
         wd = self.app.wd
-        wd.get('http://localhost/mantisbt-2.25.4/logout_page.php')
+        wd.get(self.app.logout)
 
     def is_logged_in_as(self, username):
         wd = self.app.wd

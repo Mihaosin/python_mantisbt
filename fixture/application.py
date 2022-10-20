@@ -24,6 +24,7 @@ class Application:
         self.base_url = config['web']['baseUrl']
         self.username = config['web']['username']
         self.password = config['web']['password']
+        self.logout = config['web']['logout']
 
     def is_valid(self):
         try:

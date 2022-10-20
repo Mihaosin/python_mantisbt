@@ -2,6 +2,7 @@
   "web": {
     "baseUrl": "http://localhost/mantisbt-2.25.4/",
     "username": "administrator",
-    "password": "root"
+    "password": "root",
+    "logout": "http://localhost/mantisbt-2.25.4/logout_page.php"
   }
 }
