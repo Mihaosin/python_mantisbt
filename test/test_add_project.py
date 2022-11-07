@@ -2,8 +2,10 @@ from model.project import Project
 
 
 def test_add_project(app):
+    username = app.username
+    password = app.password
     # получить список old_projects
-    old_projects = app.soap.get_project_list()
+    old_projects = app.soap.get_project_list(username, password)
     # сгенерировать имя проекта
     project_name = app.project.create_name(old_projects)
     # создать новый проект
@@ -11,7 +13,7 @@ def test_add_project(app):
     app.project.create_project(project)
     # получить список new_projects
     # new_projects = app.project.get_project_list()
-    new_projects = app.soap.get_project_list()
+    new_projects = app.soap.get_project_list(username, password)
     # модифицировать old_projects
     old_projects.append(project)
     # проверка

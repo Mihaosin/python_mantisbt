@@ -4,6 +4,7 @@
     "username": "administrator",
     "password": "root",
     "logout":   "http://localhost/mantisbt-2.25.4/logout_page.php",
-    "manage":   "http://localhost/mantisbt-2.25.4/manage_proj_page.php"
+    "manage":   "http://localhost/mantisbt-2.25.4/manage_proj_page.php",
+    "soap_client": "http://localhost/mantisbt-2.25.4/api/soap/mantisconnect.php?wsdl"
   }
 }

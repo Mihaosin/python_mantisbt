@@ -26,6 +26,7 @@ class Application:
         self.password = config['web']['password']
         self.logout = config['web']['logout']
         self.manage = config['web']['manage']
+        self.soap_client = config['web']['soap_client']
 
     def is_valid(self):
         try:
